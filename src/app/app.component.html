@@ -1,0 +1,75 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" formControlName="username">
+            <span class="help-block"
+              *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched">
+              <span class="help-block" *ngIf="signUpForm.get('userData.username').errors['nameIsForbidden']">This name
+                is invalid</span>
+              <span class="help-block" *ngIf="signUpForm.get('userData.username').errors['required']">This field
+                is required</span>
+            </span>
+
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <span class="help-block"
+              *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched">Please
+              enter valid email</span>
+          </div>
+        </div>
+
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" [value]="gender" formControlName="gender">{{ gender }}
+          </label>
+        </div>
+        <div formArrayName="hobby">
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group">
+            <input type="text" class="form-control" *ngFor="let control of getControls();let i=index"
+              [formControlName]="i">
+          </div>
+        </div>
+        <span class="help-block" *ngIf="!signUpForm.valid && signUpForm.touched">Form is not valid</span>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="assignmentForm" (ngSubmit)="onSubmit2()">
+        <div class="form-group">
+          <label for="username">Project Name</label>
+          <input type="text" id="username" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" class="form-control" formControlName="email">
+        </div>
+
+        <div class="form-group">
+          <label for="status">Project Status</label>
+          <select id="status" formControlName="status" class="form-control">
+            <option value="stable">Stable</option>
+            <option value="criticle">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
